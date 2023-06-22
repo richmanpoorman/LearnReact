@@ -9,6 +9,7 @@ const ListCheckoff = (
     onClick: (e: React.ChangeEvent<HTMLInputElement>) => void,
     id: string
 ) => {
+    console.log("Check");
     return (
         <>
             <input
@@ -19,7 +20,7 @@ const ListCheckoff = (
                 onChange={onClick}
                 checked={state}
             />
-            <label className="btn btn-outline-success" htmlFor="firstCheckbox">
+            <label className="btn btn-outline-success" htmlFor={id}>
                 {state ? "✔️" : "⭕"}
             </label>
         </>
@@ -27,6 +28,7 @@ const ListCheckoff = (
 };
 
 const ListText = (defaultString: string, id: string) => {
+    console.log("Text");
     return (
         <input
             type="text"
@@ -40,7 +42,7 @@ const ListText = (defaultString: string, id: string) => {
 
 const ListItem = (id: string, onClick: () => void) => {
     const [isChecked, setIsChecked] = useState<boolean>(false);
-
+    console.log("Item");
     const onClickFunction = (e: React.ChangeEvent<HTMLInputElement>) => {
         console.log("Click");
         console.log(e.target.checked);
